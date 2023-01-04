@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block css %}
+
+<style>
+    h2 {
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .hero-image {
+        height: 100%;
+    }
+
+    .hero-text {
+        background-color: rgba(0, 0, 0, 0.700);
+        width: 500px;
+        top: 50%;
+    }
+
+    .hero-text2 {
+        width: 75%;
+        margin: auto;
+    }
+
+    .form-control {
+        background-color: rgb(233, 233, 233);
+        border: none;
+    }
+
+    .p-grey {
+        color: grey;
+    }
+
+    .con-footer {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.700);
+    }
+
+    @media screen and (max-width: 700px) {
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(img/arkaplan.jpg);
+        }
+    }
+</style>
+{% endblock css %}
+
+
+{% block nonheader %}
+
+
+<div class="hero-image">
+    <!-- navbar -->
+    <img src="{% static 'img/arkaplan.jpg' %}" alt=""
+        style="position: absolute; opacity: .7; height: 100vh; width: 100%; ">
+    <nav class="navbar">
+        <div class="container">
+            <a href="" class="navbar-brand"><img src="{% static 'img/netflix_logo.png' %}" alt=""></a>
+        </div>
+    </nav>
+
+    <div class="hero-text">
+
+        {% if hata %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ hata }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+        <!-- form -->
+        <form action="" method="POST" class="hero-text2 mt-5 mb-5">
+            {% csrf_token %}
+            <h2>Kaydol</h2>
+
+            <div class="mb-3">
+                <input type="text" name="name" class="form-control form-control-lg" placeholder="Ad">
+                <input type="text" name="surname" class="form-control form-control-lg mt-2" placeholder="Soyad">
+                <input type="email" name="email" class="form-control form-control-lg mt-2" placeholder="Email">
+                <input type="text" name="username" class="form-control form-control-lg mt-2" placeholder="Kullanıcı Adı">
+                <input type="password" name="password1" class="form-control form-control-lg mt-2" placeholder="Şifre">
+                <input type="password" name="password2" class="form-control form-control-lg mt-2" placeholder="Yeniden Şifre">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-danger btn-lg" type="submit">Kaydol</button>
+            </div>
+
+            <br>
+            <p class="p-grey">
+                <a href="{% url 'loginUser' %}">Zaten bir hesabın var mı? Giriş yap.</a> 
+            </p>
+        </form>
+    </div>
+
+
+</div>
+{% endblock nonheader %}

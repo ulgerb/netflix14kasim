@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+      <!-- Hero image -->
+      <div class="hero-image">
+        <img src="{% static 'img/arkaplan.jpg' %}" alt="" style="position: absolute; opacity: .7; height: 100vh; width: 100%; ">
+        <div class="hero-text">
+            <h1>Sınırsız film, dizi ve çok daha fazlası.</h1>
+            <h4>İstediğiniz yerde izleyin. İstediğiniz zaman iptal edin.</h4>
+            <p>İzlemeye hazır mısınız? Üyelik oluşturmak veya üyeliğinze erişmek için e-posta adresinizi girin</p>
+
+            <button class="btn btn-secondary btn-lg mt-3">Oynat</button>
+            <button class="btn btn-secondary btn-lg mt-3">Daha Fazla Bilgi</button>
+        </div>
+
+      </div>
+
+      <div class="container">
+          <div class="row mt-5">
+
+            <h3 class="text-light">Netflix'te Popüler</h3>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+          </div>
+
+          <div class="row mt-5">
+              <h3 class="text-light"> Gündemdekiler</h3>
+
+              <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film2.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film3.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film4.webp' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+
+            <div class="col-md-2 col-4 mt-1">
+                <a href="video.html">
+                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                </a>
+            </div>
+          </div>
+      </div>
+
+{% endblock body %}
