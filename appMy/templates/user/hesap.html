@@ -43,12 +43,34 @@
                         <button>Üyeliği iptal et</button>
                     </div>
                     <div class="col">
-                        <strong>berkayulger45920@gmail.com</strong>
+                        <strong>{{ profil.user.email }}</strong>
                         <p>Parola:*******</p>
                         <p>tel: 0537 692 52 42</p>
                     </div>
                     <div class="col">
-                        <a href="">E-postayi değiştir</a> <br>
+                        <a href="" data-bs-toggle="modal" data-bs-target="#email">E-postayi değiştir</a> <br>
+                        <div class="modal fade" id="email" tabindex="-1" aria-labelledby="emailLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="emailLabel">Email</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form method="POST">
+                                        <div class="modal-body">
+                                            {% csrf_token %}
+                                            <input type="email" name="email" class="form-control mt-2" placeholder="Email" aria-label="Email"
+                                                aria-describedby="basic-addon1" value="{{ profil.user.email }}">
+                                            <input type="hidden" name="hidden" value="email">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button name="netflix-index" type="submit" class="btn btn-primary">Değiştir</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <a href="">Parolayı değiştir</a> <br>
                         <a href="">Telefon numarasını değiştir</a>
                     </div>

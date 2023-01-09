@@ -23,82 +23,30 @@
 
             <h3 class="text-light">Netflix'te Popüler</h3>
 
+            
+            {% for vid in videos %}
             <div class="col-md-2 col-4 mt-1">
                 <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
+                    <img src="{{ vid.image.url }}" class="w-100" alt="">
+                    <div class="text-white">{{ vid.title }}</div>
                 </a>
             </div>
+            {% endfor %}
+                
 
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
+           
 
           </div>
 
           <div class="row mt-5">
-              <h3 class="text-light"> Gündemdekiler</h3>
+                <h3 class="text-light"> Gündemdekiler</h3>
 
-              <div class="col-md-2 col-4 mt-1">
+                <div class="col-md-2 col-4 mt-1">
                 <a href="video.html">
                     <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
                 </a>
-            </div>
+                </div>
 
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film2.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film3.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film4.webp' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
-
-            <div class="col-md-2 col-4 mt-1">
-                <a href="video.html">
-                    <img src="{% static 'img/film1.jpg' %}" class="w-100" alt="">
-                </a>
-            </div>
           </div>
       </div>
 

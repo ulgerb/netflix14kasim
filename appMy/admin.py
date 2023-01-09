@@ -10,3 +10,4 @@ class ProfilAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Profil,ProfilAdmin)
+admin.site.register(Video)

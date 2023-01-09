@@ -13,3 +13,11 @@ class Profil(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Video(models.Model):
+    title = models.CharField(("Video Başlığı"), max_length=50)
+    text = models.TextField(("Video Konusu"))
+    image = models.FileField(("Video"), upload_to='', max_length=100)
+    
+    def __str__(self):
+        return self.title

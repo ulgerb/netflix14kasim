@@ -6,6 +6,14 @@ from appMy.models import Profil
 def accountUser(request,id):
     profil = get_object_or_404(Profil,id=id)
 
+    if request.method == "POST":
+        if request.POST["hidden"] == "email":
+            email = request.POST["email"]
+            user = User.objects.get(username=request.user)
+            user.email = email
+            user.save()
+            return redirect("/hesap/{}/".format(id))
+    
     context = {
         "profil": profil,
     }
@@ -22,7 +30,16 @@ def registerUser(request):
         password1 = request.POST["password1"]
         password2 = request.POST["password2"]
         
-        if password1==password2:
+        harfup = False
+        harfnumber = False
+        for harf in password1:
+            if harf.isupper():
+                harfup = True
+            if harf.isnumeric():
+                harfnumber = True
+            
+            
+        if password1 == password2 and harfup and harfnumber and len(password1) > 7:
             if not User.objects.filter(username=username).exists():
                 if not User.objects.filter(email=email).exists():
                     user = User.objects.create_user(username=username,password=password1,
@@ -36,7 +53,7 @@ def registerUser(request):
                 hata = 'Bu Kullanıcı adı zaten başkası tarafından kullanılıyor!'
                 return render(request, 'user/register.html', {"hata": hata})
         else:
-            hata = 'Şifreler aynı değil!'
+            hata = 'Şifrelerin en az 8 karakter, bir büyük harf, bir sayı ve aynı olması gerekir'
             return render(request, 'user/register.html', {"hata": hata})
                 
     return render(request,'user/register.html')

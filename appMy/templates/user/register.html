@@ -78,12 +78,12 @@
             <h2>Kaydol</h2>
 
             <div class="mb-3">
-                <input type="text" name="name" class="form-control form-control-lg" placeholder="Ad">
-                <input type="text" name="surname" class="form-control form-control-lg mt-2" placeholder="Soyad">
-                <input type="email" name="email" class="form-control form-control-lg mt-2" placeholder="Email">
-                <input type="text" name="username" class="form-control form-control-lg mt-2" placeholder="Kullanıcı Adı">
-                <input type="password" name="password1" class="form-control form-control-lg mt-2" placeholder="Şifre">
-                <input type="password" name="password2" class="form-control form-control-lg mt-2" placeholder="Yeniden Şifre">
+                <input type="text" name="name" class="form-control form-control-lg" placeholder="Ad" required>
+                <input type="text" name="surname" class="form-control form-control-lg mt-2" placeholder="Soyad" required>
+                <input type="email" name="email" class="form-control form-control-lg mt-2" placeholder="Email" required>
+                <input type="text" name="username" class="form-control form-control-lg mt-2" placeholder="Kullanıcı Adı" required>
+                <input type="password" name="password1" class="form-control form-control-lg mt-2" placeholder="Şifre" minlength="8" required>
+                <input type="password" name="password2" class="form-control form-control-lg mt-2" placeholder="Yeniden Şifre" minlength="8" required>
             </div>
             <div class="d-grid gap-2">
                 <button class="btn btn-danger btn-lg" type="submit">Kaydol</button>
